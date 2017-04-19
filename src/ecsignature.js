@@ -58,7 +58,7 @@ ECSignature.prototype.toCompact = function (i, compressed) {
 
   i += 27
 
-  var buffer = Buffer.alloc(65)
+  var buffer = Buffer.allocUnsafe(65)
   buffer.writeUInt8(i, 0)
   this.r.toBuffer(32).copy(buffer, 1)
   this.s.toBuffer(32).copy(buffer, 33)
